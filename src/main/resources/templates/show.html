@@ -9,6 +9,6 @@
 Task Name :<span th:text="${todo.taskName}" ></span><br />
 Task Due Date :<span th:text="${todo.dueDate}" ></span><br />
 Task Priority :<p th:text="${todo.priority}" ></p><br />
-<a th:href="@{/delete/{id}(id=${tod.id})}">Delete this To Do</a>
+<a th:href="@{/delete/{id}(id=${todo.id})}">Delete this To Do</a>
 </body>
 </html>

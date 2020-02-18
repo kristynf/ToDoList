@@ -20,7 +20,7 @@ public class Todo {
 
     @NotNull
     @Size(min=6)
-    private int dueDate;
+    private String dueDate;
 
     @NotNull
     @Size(min=3)
@@ -45,11 +45,11 @@ public class Todo {
         this.taskName = taskName;
     }
 
-    public int getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(int dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
