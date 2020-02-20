@@ -6,11 +6,13 @@
 </head>
 <body>
 <h1>To Do Form</h1>
-<form action="#" th:action="@{/process}" th:object="${todo}" method="post">
+<form action="#" th:action="@{/add}" th:object="${todo}" method="post" enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />
+    <input type="hidden" th:field="*{image}"/>
     Task Name :<input type="text" th:field="*{taskName}" />
     <span th:if="${#fields.hasErrors('taskName')}"
           th:errors="*{taskName}"></span><br />
+    Task Image :<input type="file" name="file" /><br>
     Due Date :<input type="text" th:field="*{dueDate}" />
     <span th:if="${#fields.hasErrors('dueDate')}"
           th:errors="*{dueDate}"></span><br />

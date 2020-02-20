@@ -7,6 +7,7 @@
 <body>
 <a href="/">Show All Tasks</a><br />
 Task Name :<span th:text="${todo.taskName}" ></span><br />
+Task Image :<span th:file="${todo.image}" ></span><br />
 Task Due Date :<span th:text="${todo.dueDate}" ></span><br />
 Task Priority :<p th:text="${todo.priority}" ></p><br />
 <a th:href="@{/delete/{id}(id=${todo.id})}">Delete this To Do</a>

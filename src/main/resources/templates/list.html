@@ -7,15 +7,22 @@
 <body>
 <h1>To Do List</h1>
 <a href="/add">Add a To Do</a><br />
+<!--<div th:each="todo : ${todos}">-->
+<!--<div th:if="${todo.image} !=null">-->
+<!--    <img th:src="${todo.image}" /><hr />-->
+<!--</div>-->
+<!--</div>-->
 <table>
     <tr>
         <th>Task Name</th>
+        <th>Task Image</th>
         <th>Due Date</th>
         <td>Priority</td>
 
     </tr>
     <tr th:each="todo : ${todos}">
         <td th:text="${todo.taskName}"></td>
+        <td><img th:src="${todo.image}"></td>
         <td th:text="${todo.dueDate}"></td>
         <td th:text="${todo.priority}"></td>
         <td>

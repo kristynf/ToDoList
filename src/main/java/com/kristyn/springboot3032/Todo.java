@@ -18,6 +18,8 @@ public class Todo {
     @Size(min=4)
     private String taskName;
 
+    private String image;
+
     @NotNull
     @Size(min=6)
     private String dueDate;
@@ -43,6 +45,14 @@ public class Todo {
 
     public void setTaskName(String taskName) {
         this.taskName = taskName;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getDueDate() {
