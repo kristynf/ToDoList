@@ -1,26 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link th:href="@{../style.css}" rel="stylesheet" type="text/css" media="screen" />
     <meta charset="UTF-8">
     <title>To Do Form</title>
 </head>
 <body>
-<h1>To Do Form</h1>
-<form action="#" th:action="@{/add}" th:object="${todo}" method="post" enctype="multipart/form-data">
-    <input type="hidden" th:field="*{id}" />
-    <input type="hidden" th:field="*{image}"/>
-    Task Name :<input type="text" th:field="*{taskName}" />
-    <span th:if="${#fields.hasErrors('taskName')}"
-          th:errors="*{taskName}"></span><br />
-    Task Image :<input type="file" name="file" /><br>
-    Due Date :<input type="text" th:field="*{dueDate}" />
-    <span th:if="${#fields.hasErrors('dueDate')}"
-          th:errors="*{dueDate}"></span><br />
-    Priority :<input type="text" th:field="*{priority}" />
-    <span th:if="${#fields.hasErrors('priority')}"
-          th:errors="*{priority}"></span><br />
-    <br />
-    <input type="submit" value="Submit" />
-</form>
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Vestibule
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130406
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>To Do List</title>
+    <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+    <div id="menu-wrapper">
+        <div id="menu" class="container">
+            <ul>
+                <li class="current_page_item"><a href="/add">Add A Task</a></li>
+                <li><a href="/">List Items</a></li>
+                <li><a href="https://www.forbes.com/sites/johnrampton/2018/05/01/manipulate-time-with-these-powerful-20-time-management-tips/#34e3e8457ab4" target="_blank">Forbes Take on Time Management</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="mailto:thetruthandsoul@gmail.com">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="logo" class="container">
+        <h1><a href="#">To Do List</a></h1>
+        <p>Manage All Your Important Tasks</p>
+    </div>
+  <hr>
+    <div align="center" id="page" class="container">
+        <div>
+            <div class="entry">
+                <p>Use this form to enter all your tasks</p>
+                <h1>To Do Form</h1>
+                <form action="#" th:action="@{/add}" th:object="${todo}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" th:field="*{id}" />
+                    <input type="hidden" th:field="*{image}"/>
+                    Task Name :<input type="text" th:field="*{taskName}" />
+                    <span th:if="${#fields.hasErrors('taskName')}"
+                          th:errors="*{taskName}"></span><br />
+                    Task Image :<input type="file" name="file" /><br>
+                    Due Date :<input type="text" th:field="*{dueDate}" />
+                    <span th:if="${#fields.hasErrors('dueDate')}"
+                          th:errors="*{dueDate}"></span><br />
+                    Priority :<input type="text" th:field="*{priority}" />
+                    <span th:if="${#fields.hasErrors('priority')}"
+                          th:errors="*{priority}"></span><br />
+                    <br />
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+    </div>
+    </div>
+</div>
+<div id="footer">
+    <div align="center" class="about-icons">
+        <ul >
+            <li><a href="https://www.github.com/kristynf/"><i id="social-gh" class="fa fa-github-square fa-3x social"></i></a> </li>
+            <li><a href="https://www.linkedin"><i id="social-li" class="fa fa-linkedin-square fa-3x social"></i></a> </li>
+            <li> <a href="mailto:thetruthandsoul@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a> </li>
+        </ul>
+
+    </div>
+    <p>© 2020 kferbs Inc. All rights reserved.  Base template provided by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+<!-- end #footer -->
+
 </body>
 </html>

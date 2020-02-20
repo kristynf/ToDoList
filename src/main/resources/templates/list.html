@@ -1,36 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link th:href="@{../style.css}" rel="stylesheet" type="text/css" media="screen" />
     <meta charset="UTF-8">
     <title>To Do Listings</title>
 </head>
 <body>
-<h1>To Do List</h1>
-<a href="/add">Add a To Do</a><br />
-<!--<div th:each="todo : ${todos}">-->
-<!--<div th:if="${todo.image} !=null">-->
-<!--    <img th:src="${todo.image}" /><hr />-->
-<!--</div>-->
-<!--</div>-->
-<table>
-    <tr>
-        <th>Task Name</th>
-        <th>Task Image</th>
-        <th>Due Date</th>
-        <td>Priority</td>
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
 
-    </tr>
-    <tr th:each="todo : ${todos}">
-        <td th:text="${todo.taskName}"></td>
-        <td><img th:src="${todo.image}"></td>
-        <td th:text="${todo.dueDate}"></td>
-        <td th:text="${todo.priority}"></td>
-        <td>
-            <a th:href="@{/update/{id}(id=${todo.id})}">Update</a> -
-            <a th:href="@{/detail/{id}(id=${todo.id})}">Details</a> -
-            <a th:href="@{/delete/{id}(id=${todo.id})}">Delete</a>
-        </td></tr>
-    </tr>
-</table>
+Name       : Vestibule
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130406
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>To Do List</title>
+    <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+    <div id="menu-wrapper">
+        <div id="menu" class="container">
+            <ul>
+                <li class="current_page_item"><a href="/add">Add A Task</a></li>
+                <li><a href="/">List Items</a></li>
+                <li><a href="https://www.forbes.com/sites/johnrampton/2018/05/01/manipulate-time-with-these-powerful-20-time-management-tips/#34e3e8457ab4"target="_blank">Forbes Take on Time Management</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="mailto:thetruthandsoul@gmail.com">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="logo" class="container">
+        <h1><a href="#">To Do List</a></h1>
+        <p>Manage All Your Important Tasks</p>
+    </div>
+    <div align="center">
+        <a href="/add">Add a To Do</a><br />
+    <table align="center">
+        <tr>
+            <th>Task Name</th>
+            <th>Task Image</th>
+            <th>Due Date</th>
+            <th>Priority</th>
+
+        </tr>
+        <tr th:each="todo : ${todos}">
+            <td th:text="${todo.taskName}"></td>
+            <td><img class = "crop" th:src="${todo.image}"></td>
+            <td th:text="${todo.dueDate}"></td>
+            <td th:text="${todo.priority}"></td>
+            <td>
+                <a th:href="@{/update/{id}(id=${todo.id})}">Update</a> -
+                <a th:href="@{/detail/{id}(id=${todo.id})}">Details</a> -
+                <a th:href="@{/delete/{id}(id=${todo.id})}">Delete</a>
+            </td></tr>
+        </tr>
+    </table>
+    </div>
+</div>
+<div id="footer">
+    <div align="center" class="about-icons">
+        <ul >
+            <li><a href="https://www.github.com/kristynf/"><i id="social-gh" class="fa fa-github-square fa-3x social"></i></a> </li>
+            <li><a href="https://www.linkedin"><i id="social-li" class="fa fa-linkedin-square fa-3x social"></i></a> </li>
+            <li> <a href="mailto:thetruthandsoul@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a> </li>
+        </ul>
+
+    </div>
+    <p>© 2020 kferbs Inc. All rights reserved.  Base template provided by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+<!-- end #footer -->
+
+<!--<div th:each="todo : ${todos}"> -->
+<!--<div th:if="${todo.image} !=null"> -->
+<!--    <img th:src="${todo.image}" /><hr /> -->
+<!--</div>-->
+<!--</div>-->
+
 </body>
 </html>

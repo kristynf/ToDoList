@@ -1,7 +1,6 @@
 package com.kristyn.springboot3032;
 
 import com.cloudinary.utils.ObjectUtils;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,11 +25,10 @@ public class homeController {
         model.addAttribute("todos", todoRepository.findAll());
         return "list";
     }
-    @RequestMapping("/index")
-    public String index() {
-        return "index";
+    @RequestMapping("/about")
+    public String about() {
+        return "about";
     }
-
     @GetMapping("/add")
     public String todoForm(Model model){
         model.addAttribute("todo", new Todo());

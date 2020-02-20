@@ -19,13 +19,16 @@ Released   : 20130406
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>To Do List</title>
+    <title>About Me</title>
     <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link th:href="@{../style.css}" rel="stylesheet" type="text/css" media="screen" />
+   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
 <div id="wrapper">
@@ -34,30 +37,33 @@ Released   : 20130406
             <ul>
                 <li class="current_page_item"><a href="/add">Add A Task</a></li>
                 <li><a href="/">List Items</a></li>
-                <li><a href="https://www.forbes.com/sites/johnrampton/2018/05/01/manipulate-time-with-these-powerful-20-time-management-tips/#34e3e8457ab4"target="_blank">Forbes Take on Time Management</a></li>
+                <li><a href="https://www.forbes.com/sites/johnrampton/2018/05/01/manipulate-time-with-these-powerful-20-time-management-tips/#34e3e8457ab4" target="_blank">Forbes Take on Time Management</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="mailto:thetruthandsoul@gmail.com">Contact Us</a></li>
             </ul>
         </div>
     </div>
-    <div id="logo" class="container">
-        <h1><a href="#">To Do List</a></h1>
-        <p>Manage All Your Important Tasks</p>
+
+    <div class="about-section paddingTB60 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-6">
+                    <div class="about-title clearfix">
+                        <h1>About <span>kferbs</span></h1>
+                        <h3>Web Developer Extraordinaire</h3>
+                        <p class="about-paddingB">K Ferbs is a student at the prestigious Montgomery College Web Development Bootcamp. She is loving the Java life. </p>
+
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-6">
+                    <div class="about-img">
+                        <img src="https://devitems.com/preview/appmom/img/mobile/2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div align="center">
 
-
-
-        <a href="/">Show All Tasks</a><br />
-        Task Name :<span th:text="${todo.taskName}" ></span><br />
-        Task Image :<img class = "crop" th:src="${todo.image}"></span><br />
-
-        Task Due Date :<span th:text="${todo.dueDate}" ></span><br />
-        Task Priority :<p th:text="${todo.priority}" ></p><br />
-        <a th:href="@{/delete/{id}(id=${todo.id})}">Delete this To Do</a>
-
-
-    </div>
 </div>
 <div id="footer">
     <div align="center" class="about-icons">
