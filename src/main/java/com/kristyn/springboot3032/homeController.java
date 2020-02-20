@@ -43,13 +43,13 @@ public class homeController {
         return "redirect:/";
     }*/
     @PostMapping("/add")
-    public String processActor(@Valid @ModelAttribute Todo todo,BindingResult result, @RequestParam("file") MultipartFile image){
+    public String processTodo(@Valid @ModelAttribute Todo todo,BindingResult result, @RequestParam("file") MultipartFile image){
         if(result.hasErrors()){
-            System.out.println("im here in result");
+//            System.out.println("im here in result");
             return "todoform";
         }
         if(image.isEmpty()){
-            System.out.println("im here in image");
+//            System.out.println("im here in image");
             return "redirect:/add";
         }
         try {
